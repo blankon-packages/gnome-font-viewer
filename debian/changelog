@@ -1,3 +1,22 @@
+gnome-font-viewer (3.14.0-1blankon1) tambora; urgency=low
+
+  * New upstream release
+
+ -- Syai Mif <syai.unipdu@gmail.com>  Thu, 25 Sep 2014 09:45:21 +0700
+
+gnome-font-viewer (3.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Upload to unstable.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Tue, 23 Sep 2014 09:20:35 +0200
+
+gnome-font-viewer (3.13.90-1) experimental; urgency=medium
+
+  * New upstream development release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 13 Sep 2014 22:57:34 +0200
+
 gnome-font-viewer (3.12.0-1blankon1) tambora; urgency=medium
 
   * New Upstream Release.
