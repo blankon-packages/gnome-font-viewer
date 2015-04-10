@@ -1,0 +1,28 @@
+From 9d4ec7300bbe57c2ebf36d292f6b574f27325fbc Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Thu, 13 Nov 2014 14:25:09 -0500
+Subject: Fix an uninitialized variable
+
+The str variable may be freed without ever having been set
+here, if we take one of the early gotos. This is showing up
+as a frequent crash in Fedoras retrace server:
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1148522
+
+diff --git a/src/font-thumbnailer.c b/src/font-thumbnailer.c
+index 3e76323..57be150 100644
+--- a/src/font-thumbnailer.c
++++ b/src/font-thumbnailer.c
+@@ -181,7 +181,7 @@ main (int argc,
+     cairo_t *cr;
+     cairo_text_extents_t text_extents;
+     cairo_font_face_t *font;
+-    gchar *str;
++    gchar *str = NULL;
+     gdouble scale, scale_x, scale_y;
+ 
+     const GOptionEntry options[] = {
+-- 
+cgit v0.10.2
+
+
